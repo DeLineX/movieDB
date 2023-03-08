@@ -20,11 +20,32 @@ $MAIN_COLOR: #81BECB;
 $BASE_FONT_SIZE: 14px;
 $BASE_FONT: 'Roboto';
 
+@mixin getRemSize($prop, $size, $base: $BASE_FONT_SIZE) {
+    #{$prop}: $size / $base * 1rem;
+}
+
+@mixin getRemSize-2val($prop, $size1, $size2, $base: $BASE_FONT_SIZE) {
+    #{$prop}: $size1 / $base * 1rem $size2 / $base * 1rem;
+}
+
+@mixin getRemSize-4val($prop, $size1, $size2, $size3, $size4, $base: $BASE_FONT_SIZE) {
+    #{$prop}: $size1 / $base * 1rem $size2 / $base * 1rem $size3 / $base * 1rem $size4 / $base * 1rem;
+}
+
+@mixin getRemFontSize($fs, $BASE_FS: $BASE_FONT_SIZE) {
+    @include getRemSize(font-size, $fs, $BASE_FS);
+    @include getRemSize(line-height, $fs + 4, $BASE_FS);
+}
+
 html,
 body {
     font-size: $BASE_FONT_SIZE;
     color: #fff;
     font-family: $BASE_FONT;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 11px;
+    }
 }
 
 img {
@@ -40,11 +61,6 @@ a {
     text-decoration: inherit;
 }
 
-@mixin getRemSize($fs) {
-    font-size: $fs / $BASE_FONT_SIZE * 1rem;
-    line-height: ($fs + 4) / $BASE_FONT_SIZE * 1rem;
-}
-
 .page {
     background-image: url('/src/assets/images/background.png');
     min-height: 100vh;
@@ -53,12 +69,12 @@ a {
 }
 
 .header {
-    padding-top: 28px;
-    padding-bottom: 17px;
+    @include getRemSize(padding-top, 28px);
+    @include getRemSize(padding-bottom, 17px);
     background-color: #181A19;
     border-bottom: solid 2px #212323;
     box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
-    @include getRemSize(18px);
+    @include getRemFontSize(18px);
 
     &__content {
         @include make-container-max-widths();
@@ -68,9 +84,14 @@ a {
         align-items: center;
     }
 
+    &__logo {
+        @include getRemFontSize(12px);
+        @include getRemSize(width, 157px);
+    }
+
     &__nav {
         flex-shrink: 0;
-        margin: 0 25px;
+        @include getRemSize-2val(margin, 0px, 25px);
     }
 
     &__list {
@@ -78,7 +99,7 @@ a {
 
         &-item {
             cursor: pointer;
-            margin-right: 30px;
+            @include getRemSize(margin-right, 30px);
             transition: all .2s ease-in-out;
 
             &:last-child {
@@ -107,7 +128,7 @@ a {
 
         &-input {
             width: 100%;
-            padding: 22px 30px;
+            @include getRemSize-2val(padding, 22px, 30px);
             color: #6D7A7C;
             appearance: none;
             background-color: #1B1E1E;
@@ -121,6 +142,11 @@ a {
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
+            @include getRemSize(width, 29px);
+
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -129,17 +155,20 @@ a {
     display: inline-block;
     text-align: center;
 
+    &__img {
+        width: 100%;
+    }
+
     &__text {
-        margin-top: 8px;
+        @include getRemSize(margin-top, 8px);
         color: $MAIN_COLOR;
-        @include getRemSize(12px);
     }
 }
 
 .main {
     @include make-container-max-widths();
     @include make-container();
-    margin-top: 30px;
+    @include getRemSize(margin-top, 30px);
 
     &__content {
         @include make-row();
@@ -147,7 +176,8 @@ a {
 }
 
 .breadcrumbs {
-    @include getRemSize(18px);
+    @include getRemFontSize(18px);
+
     &__item {
         transition: all .2s ease-in-out;
 
@@ -169,14 +199,15 @@ a {
 }
 
 .banner {
-    padding-bottom: 20px;
+    @include getRemSize(padding-bottom, 20px);
+
     &__block {
         position: relative;
     }
 
     &__breadcrumbs {
         background-color: rgba(#161A19, .35);
-        padding: 20px;
+        @include getRemSize(padding, 20px);
         position: absolute;
         width: 100%;
         top: 0;
@@ -207,30 +238,30 @@ a {
 
     &__title {
         font-family: 'Philosopher';
-        @include getRemSize(65px);
+        @include getRemFontSize(65px);
         position: absolute;
-        width: 20%;
         top: 50%;
-        left: 100px;
+        @include getRemSize(left, 100px);
         transform: translateY(-50%);
     }
 
     &__text {
-        margin-top: 40px;
-        @include getRemSize(20px);
+        @include getRemSize(margin-top, 40px);
+        @include getRemFontSize(20px);
     }
 }
 
 .compilation {
-    margin-top: 60px;
+    @include getRemSize(margin-top, 60px);
+
     &__title {
-        @include getRemSize(40px);
-        padding-bottom: 30px;
+        @include getRemFontSize(40px);
+        @include getRemSize(padding-bottom, 30px);
         border-bottom: 2px solid $MAIN_COLOR;
     }
 
     &__content {
-        margin-top: 40px;
+        @include getRemSize(margin-top, 40px);
         display: flex;
         flex-wrap: wrap;
     }
@@ -253,7 +284,7 @@ a {
         border: 1px solid #2B2B2B;
         overflow: hidden;
 
-        img {
+        >img {
             width: 100%;
             object-fit: contain
         }
@@ -261,14 +292,14 @@ a {
 
     &__title {
         transition: color .2s ease-in-out;
-        margin-top: 20px;
+        @include getRemSize(margin-top, 20px);
         font-weight: 500;
-        @include getRemSize(22px);
+        @include getRemFontSize(22px);
     }
 
     &__about {
-        margin-top: 10px;
-        @include getRemSize(20px);
+        @include getRemSize(margin-top, 10px);
+        @include getRemFontSize(20px);
     }
 
     &__rating {
@@ -282,47 +313,55 @@ a {
         left: 50%;
         transform: translate(-50%, -50%);
 
+        &-icon {
+            margin: 0 auto;
+            @include getRemSize(width, 54px);
+        }
+
         &-text {
-            margin-top: 10px;
-            @include getRemSize(14px);
+            @include getRemSize(margin-top, 10px);
+            @include getRemFontSize(14px);
         }
     }
 
-    &:hover 
-        &__title {
-            color: $MAIN_COLOR;
-        }
+    &:hover &__title {
+        color: $MAIN_COLOR;
+    }
 
-    &_canView 
-        &__img {
-            &::before {
-                content: '';
-                position: absolute;
-                background-color: rgba(#000, .5);
-                width: 100%;
-                height: 100%;
-                top: 0;
-            }
+    &_canView &__img {
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: rgba(#000, .5);
+            width: 100%;
+            height: 100%;
+            top: 0;
         }
+    }
 }
 
 .rating-tiny {
     display: flex;
-    margin-top: 10px;
-    
-    &__value {
-        @include getRemSize(18px);
-        padding: 7px 6px;
-        line-height: 20px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+    @include getRemSize(margin-top, 10px);
+    @include getRemSize(height, 34px);
+
+    &:hover &__value {
+        @include getRemSize(padding-left, 15px);
     }
 
-    &_kp 
-        &__value {
-            background-color: #E16001;
-        }
-    
+    &__value {
+        @include getRemSize(font-size, 18px);
+        @include getRemSize-2val(padding, 7px, 6px);
+        @include getRemSize(line-height, 20px);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: padding .3s ease-in-out;
+    }
+
+    &_kp &__value {
+        background-color: #E16001;
+    }
+
 
     &_imdb &__value {
         background-color: #D49F31;

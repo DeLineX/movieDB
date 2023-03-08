@@ -6,4 +6,8 @@ export default defineConfig({
             scss: {},
         },
     },
+    base: '/movieDB/',
+    build: {
+        minify: false,
+    },
 });
