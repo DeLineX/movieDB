@@ -1,46 +1,18 @@
 @import '/node_modules/reset-css/reset.css';
-@import '/node_modules/bootstrap-4-grid/scss/grid.scss';
 @import 'https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Roboto:wght@400;500&display=swap';
+@import './variables.scss';
+@import './mixins.scss';
+@import './grid/grid.scss';
+@import './grid/breakpoints.scss';
 
-$grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 1300px,
-    xl: 1860px
-);
-$container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 1270px,
-    xl: 1830px
-);
-
-$MAIN_COLOR: #81BECB;
-$BASE_FONT_SIZE: 14px;
-$BASE_FONT: 'Roboto';
-
-@mixin getRemSize($prop, $size, $base: $BASE_FONT_SIZE) {
-    #{$prop}: $size / $base * 1rem;
-}
-
-@mixin getRemSize-2val($prop, $size1, $size2, $base: $BASE_FONT_SIZE) {
-    #{$prop}: $size1 / $base * 1rem $size2 / $base * 1rem;
-}
-
-@mixin getRemSize-4val($prop, $size1, $size2, $size3, $size4, $base: $BASE_FONT_SIZE) {
-    #{$prop}: $size1 / $base * 1rem $size2 / $base * 1rem $size3 / $base * 1rem $size4 / $base * 1rem;
-}
-
-@mixin getRemFontSize($fs, $BASE_FS: $BASE_FONT_SIZE) {
-    @include getRemSize(font-size, $fs, $BASE_FS);
-    @include getRemSize(line-height, $fs + 4, $BASE_FS);
+* {
+    box-sizing: border-box;
 }
 
 html,
 body {
     font-size: $BASE_FONT_SIZE;
-    color: #fff;
+    color: $TEXT_COLOR;
     font-family: $BASE_FONT;
 
     @include media-breakpoint-down(lg) {
@@ -61,17 +33,27 @@ a {
     text-decoration: inherit;
 }
 
+.link {
+    color: inherit;
+    transition: 0.2s ease-in-out;
+    text-decoration: underline;
+
+    &:hover {
+        color: $PRIMARY_COLOR;
+    }
+}
+
 .page {
     background-image: url('/src/assets/images/background.png');
     min-height: 100vh;
-    background-size: 100%;
     background-color: #171717;
+    background-position: center 165px;
 }
 
 .header {
     @include getRemSize(padding-top, 28px);
     @include getRemSize(padding-bottom, 17px);
-    background-color: #181A19;
+    background-color: #181a19;
     border-bottom: solid 2px #212323;
     box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
     @include getRemFontSize(18px);
@@ -100,19 +82,15 @@ a {
         &-item {
             cursor: pointer;
             @include getRemSize(margin-right, 30px);
-            transition: all .2s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
             &:last-child {
                 margin-right: 0;
             }
 
             &:hover {
-                color: $MAIN_COLOR;
+                color: $PRIMARY_COLOR;
             }
-
-            // &__expandable {
-
-            // }
         }
     }
 
@@ -122,16 +100,17 @@ a {
         align-items: center;
         border-radius: 93px;
         overflow: hidden;
-        border: solid 2px #252A2C;
+        border: solid 2px #252a2c;
         position: relative;
-
+        max-width: 716px;
 
         &-input {
             width: 100%;
             @include getRemSize-2val(padding, 22px, 30px);
-            color: #6D7A7C;
+            @include getRemFontSize(18px);
+            color: #6d7a7c;
             appearance: none;
-            background-color: #1B1E1E;
+            background-color: #1b1e1e;
             outline: none;
             appearance: none;
         }
@@ -161,7 +140,7 @@ a {
 
     &__text {
         @include getRemSize(margin-top, 8px);
-        color: $MAIN_COLOR;
+        color: $PRIMARY_COLOR;
     }
 }
 
@@ -179,10 +158,10 @@ a {
     @include getRemFontSize(18px);
 
     &__item {
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
 
         &:hover {
-            color: $MAIN_COLOR;
+            color: $PRIMARY_COLOR;
         }
 
         &:last-child {
@@ -206,7 +185,7 @@ a {
     }
 
     &__breadcrumbs {
-        background-color: rgba(#161A19, .35);
+        background-color: rgba(#161a19, 0.35);
         @include getRemSize(padding, 20px);
         position: absolute;
         width: 100%;
@@ -215,7 +194,7 @@ a {
     }
 
     &__img {
-        border: 2px solid #2B2B2B;
+        border: 2px solid #2b2b2b;
         position: relative;
         box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
@@ -232,7 +211,7 @@ a {
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(#000, .2)
+            background-color: rgba(#000, 0.2);
         }
     }
 
@@ -257,7 +236,7 @@ a {
     &__title {
         @include getRemFontSize(40px);
         @include getRemSize(padding-bottom, 30px);
-        border-bottom: 2px solid $MAIN_COLOR;
+        border-bottom: 2px solid $PRIMARY_COLOR;
     }
 
     &__content {
@@ -280,18 +259,19 @@ a {
     &__img {
         position: relative;
         border-radius: 5px;
-        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, .14);
-        border: 1px solid #2B2B2B;
+        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.14);
+        border: 1px solid #2b2b2b;
         overflow: hidden;
+        height: 381px;
 
-        >img {
+        > img {
             width: 100%;
-            object-fit: contain
+            object-fit: contain;
         }
     }
 
     &__title {
-        transition: color .2s ease-in-out;
+        transition: color 0.2s ease-in-out;
         @include getRemSize(margin-top, 20px);
         font-weight: 500;
         @include getRemFontSize(22px);
@@ -325,14 +305,14 @@ a {
     }
 
     &:hover &__title {
-        color: $MAIN_COLOR;
+        color: $PRIMARY_COLOR;
     }
 
     &_canView &__img {
         &::before {
             content: '';
             position: absolute;
-            background-color: rgba(#000, .5);
+            background-color: rgba(#000, 0.5);
             width: 100%;
             height: 100%;
             top: 0;
@@ -355,20 +335,179 @@ a {
         @include getRemSize(line-height, 20px);
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        transition: padding .3s ease-in-out;
+        transition: padding 0.3s ease-in-out;
     }
 
     &_kp &__value {
-        background-color: #E16001;
+        background-color: #e16001;
     }
 
-
     &_imdb &__value {
-        background-color: #D49F31;
+        background-color: #d49f31;
     }
 }
 
 .aside {
     @include make-col(3);
     @include make-col-ready();
+}
+
+.movie {
+    @include make-row();
+
+    &__preview {
+        @include make-col(4);
+        @include make-col-ready();
+    }
+
+    &__overview {
+        @include make-col(8);
+        @include make-col-ready();
+    }
+
+    &__poster {
+        position: relative;
+        border-radius: 5px;
+        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.14);
+        border: 1px solid #2b2b2b;
+        overflow: hidden;
+        height: 666px;
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        transition: color 0.2s ease-in-out;
+        // @include getRemSize(margin-top, 20px);
+        @include getRemFontSize(40px);
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        @include getRemSize(margin-top, 15px);
+        @include getRemFontSize(30px);
+    }
+
+    &__rating {
+        // position: absolute;
+        // top: 0;
+    }
+
+    &__viewBtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &-icon {
+            margin: 0 auto;
+            @include getRemSize(width, 100px);
+        }
+
+        &-text {
+            @include getRemSize(margin-top, 15px);
+            @include getRemFontSize(14px);
+        }
+    }
+
+    // &:hover &__title {
+    //     color: $PRIMARY_COLOR;
+    // }
+
+    &__block {
+        background-color: rgba(28, 29, 31, 0.5);
+        padding: 15px 20px;
+        border-radius: 5px;
+        @include getRemSize(margin-top, 20px);
+        border: 1px solid #2b2b2b;
+        box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+
+        &_opaque {
+            background-color: #212121;
+            box-shadow: none;
+        }
+
+        &_noPadding {
+            padding: 0;
+        }
+    }
+
+    &__content {
+        @include getRemSize(margin-top, 20px);
+    }
+
+    &-info {
+        display: flex;
+        @include getRemFontSize(18px);
+
+        &__item {
+            @include getRemSize(margin-right, 50px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__title {
+            font-weight: 700;
+            @include getRemFontSize(20px);
+        }
+
+        &__text {
+            @include getRemSize(margin-top, 10px);
+        }
+    }
+
+    &-desc {
+        font-size: 18px;
+
+        &__row {
+            @include getRemSize-2val(padding, 15px, 20px);
+            border-top: 1px solid #2b2b2b;
+            display: flex;
+
+            &:first-child {
+                border-top: none;
+            }
+        }
+
+        &__title {
+            font-weight: 700;
+            width: 29%;
+        }
+
+        .link {
+            @include getRemSize(margin-right, 10px);
+        }
+    }
+
+    &_canView &__poster {
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: rgba(#000, 0.5);
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+    }
+}
+
+.top-movie {
+    @include getRemSize(margin-top, 80px);
+
+    &__pos {
+        font-weight: 700;
+        @include getRemFontSize(87px);
+        color: #727272;
+    }
+
+    &__content {
+        @include getRemSize(margin-top, -18px);
+    }
 }

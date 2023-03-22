@@ -1,0 +1,19 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1300px,
+    xl: 1860px,
+);
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 1270px,
+    xl: 1830px,
+);
+
+$PRIMARY_COLOR: #81becb;
+$BASE_FONT_SIZE: 14px;
+$BASE_FONT: 'Roboto';
+
+$TEXT_COLOR: #fff;
