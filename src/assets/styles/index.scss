@@ -1,513 +1,533 @@
-@import '/node_modules/reset-css/reset.css';
-@import 'https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Roboto:wght@400;500&display=swap';
-@import './variables.scss';
-@import './mixins.scss';
-@import './grid/grid.scss';
-@import './grid/breakpoints.scss';
+@import "/node_modules/reset-css/reset.css";
+@import "https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Roboto:wght@400;500;700&display=swap";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./grid/grid.scss";
+@import "./grid/breakpoints.scss";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    font-size: $BASE_FONT_SIZE;
-    color: $TEXT_COLOR;
-    font-family: $BASE_FONT;
+  font-size: $BASE_FONT_SIZE;
+  color: $TEXT_COLOR;
+  font-family: $BASE_FONT;
 
-    @include media-breakpoint-down(lg) {
-        font-size: 11px;
-    }
+  @include media-breakpoint-down(lg) {
+    font-size: 11px;
+  }
 }
 
 img {
-    display: block;
+  display: block;
 }
 
 input {
-    border: none;
+  border: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .link {
-    color: inherit;
-    transition: 0.2s ease-in-out;
-    text-decoration: underline;
+  color: inherit;
+  transition: 0.2s ease-in-out;
+  text-decoration: underline;
 
-    &:hover {
-        color: $PRIMARY_COLOR;
-    }
+  &:hover {
+    color: $PRIMARY_COLOR;
+  }
+}
+
+.row {
+  @include make-row();
 }
 
 .page {
-    background-image: url('/src/assets/images/background.png');
-    min-height: 100vh;
-    background-color: #171717;
-    background-position: center 165px;
+  background-image: url("/src/assets/images/background.png");
+  min-height: 100vh;
+  background-size: 100%;
+  background-color: #171717;
+  background-position: center 165px;
 }
 
 .header {
-    @include getRemSize(padding-top, 28px);
-    @include getRemSize(padding-bottom, 17px);
-    background-color: #181a19;
-    border-bottom: solid 2px #212323;
-    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
-    @include getRemFontSize(18px);
+  @include getRemSize(padding-top, 28px);
+  @include getRemSize(padding-bottom, 17px);
+  background-color: #181a19;
+  border-bottom: solid 2px #212323;
+  box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
+  @include getRemFontSize(18px);
 
-    &__content {
-        @include make-container-max-widths();
-        @include make-container();
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &__content {
+    @include make-container-max-widths();
+    @include make-container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    @include getRemFontSize(12px);
+    @include getRemSize(width, 157px);
+  }
+
+  &__nav {
+    flex-shrink: 0;
+    @include getRemSize-2val(margin, 0px, 25px);
+  }
+
+  &__list {
+    display: flex;
+    @include getRemSize(gap, 30px);
+
+    &-item {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $PRIMARY_COLOR;
+      }
+    }
+  }
+
+  &__search {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 93px;
+    overflow: hidden;
+    border: solid 2px #252a2c;
+    position: relative;
+    max-width: 716px;
+
+    &-input {
+      width: 100%;
+      @include getRemSize-2val(padding, 22px, 30px);
+      @include getRemFontSize(18px);
+      color: #6d7a7c;
+      appearance: none;
+      background-color: #1b1e1e;
+      outline: none;
+      appearance: none;
     }
 
-    &__logo {
-        @include getRemFontSize(12px);
-        @include getRemSize(width, 157px);
+    &-icon {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      @include getRemSize(width, 29px);
+
+      img {
+        width: 100%;
+      }
     }
-
-    &__nav {
-        flex-shrink: 0;
-        @include getRemSize-2val(margin, 0px, 25px);
-    }
-
-    &__list {
-        display: flex;
-
-        &-item {
-            cursor: pointer;
-            @include getRemSize(margin-right, 30px);
-            transition: all 0.2s ease-in-out;
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            &:hover {
-                color: $PRIMARY_COLOR;
-            }
-        }
-    }
-
-    &__search {
-        flex-grow: 1;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 93px;
-        overflow: hidden;
-        border: solid 2px #252a2c;
-        position: relative;
-        max-width: 716px;
-
-        &-input {
-            width: 100%;
-            @include getRemSize-2val(padding, 22px, 30px);
-            @include getRemFontSize(18px);
-            color: #6d7a7c;
-            appearance: none;
-            background-color: #1b1e1e;
-            outline: none;
-            appearance: none;
-        }
-
-        &-icon {
-            position: absolute;
-            right: 22px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            @include getRemSize(width, 29px);
-
-            img {
-                width: 100%;
-            }
-        }
-    }
+  }
 }
 
 .logo {
-    display: inline-block;
-    text-align: center;
+  display: inline-block;
+  text-align: center;
 
-    &__img {
-        width: 100%;
-    }
+  &__img {
+    width: 100%;
+  }
 
-    &__text {
-        @include getRemSize(margin-top, 8px);
-        color: $PRIMARY_COLOR;
-    }
+  &__text {
+    @include getRemSize(margin-top, 8px);
+    color: $PRIMARY_COLOR;
+  }
 }
 
 .main {
-    @include make-container-max-widths();
-    @include make-container();
-    @include getRemSize(margin-top, 30px);
+  @include make-container-max-widths();
+  @include make-container();
+  @include getRemSize(margin-top, 30px);
 
-    &__content {
-        @include make-row();
-    }
+  &__content {
+    @include make-row();
+  }
 }
 
 .breadcrumbs {
-    @include getRemFontSize(18px);
+  @include getRemFontSize(18px);
 
-    &__item {
-        transition: all 0.2s ease-in-out;
+  &__item {
+    transition: all 0.2s ease-in-out;
 
-        &:hover {
-            color: $PRIMARY_COLOR;
-        }
-
-        &:last-child {
-            &:hover {
-                color: inherit;
-            }
-        }
+    &:hover {
+      color: $PRIMARY_COLOR;
     }
+
+    &:last-child {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
 }
 
 .section {
-    @include make-col(9);
-    @include make-col-ready();
+  @include make-col(9);
+  @include make-col-ready();
 }
 
 .banner {
-    @include getRemSize(padding-bottom, 20px);
+  @include getRemSize(padding-bottom, 20px);
 
-    &__block {
-        position: relative;
+  &__block {
+    position: relative;
+  }
+
+  &__breadcrumbs {
+    background-color: rgba(#161a19, 0.35);
+    @include getRemSize(padding, 20px);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__img {
+    border: 2px solid #2b2b2b;
+    position: relative;
+    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
     }
 
-    &__breadcrumbs {
-        background-color: rgba(#161a19, 0.35);
-        @include getRemSize(padding, 20px);
-        position: absolute;
-        width: 100%;
-        top: 0;
-        z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, 0.2);
     }
+  }
 
-    &__img {
-        border: 2px solid #2b2b2b;
-        position: relative;
-        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        overflow: hidden;
+  &__title {
+    font-family: "Philosopher";
+    @include getRemFontSize(65px);
+    position: absolute;
+    top: 50%;
+    @include getRemSize(left, 100px);
+    transform: translateY(-50%);
+  }
 
-        img {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(#000, 0.2);
-        }
-    }
-
-    &__title {
-        font-family: 'Philosopher';
-        @include getRemFontSize(65px);
-        position: absolute;
-        top: 50%;
-        @include getRemSize(left, 100px);
-        transform: translateY(-50%);
-    }
-
-    &__text {
-        @include getRemSize(margin-top, 40px);
-        @include getRemFontSize(20px);
-    }
+  &__text {
+    @include getRemSize(margin-top, 40px);
+    @include getRemFontSize(20px);
+  }
 }
 
 .compilation {
-    @include getRemSize(margin-top, 60px);
+  @include getRemSize(margin-top, 60px);
 
-    &__title {
-        @include getRemFontSize(40px);
-        @include getRemSize(padding-bottom, 30px);
-        border-bottom: 2px solid $PRIMARY_COLOR;
-    }
+  &__title {
+    @include getRemFontSize(40px);
+    @include getRemSize(padding-bottom, 30px);
+    border-bottom: 2px solid $PRIMARY_COLOR;
+  }
 
-    &__content {
-        @include getRemSize(margin-top, 40px);
-        display: flex;
-        flex-wrap: wrap;
-    }
+  &__content {
+    @include getRemSize(margin-top, 40px);
+    display: flex;
+    @include getRemSize(gap, 30px);
+    flex-wrap: wrap;
+  }
 
-    &__movie {
-        margin-right: 30px;
-        width: calc((100% - 4 * 30px) / 5);
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
-.movie-tiny {
-    &__img {
-        position: relative;
-        border-radius: 5px;
-        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.14);
-        border: 1px solid #2b2b2b;
-        overflow: hidden;
-        height: 381px;
-
-        > img {
-            width: 100%;
-            object-fit: contain;
-        }
-    }
-
-    &__title {
-        transition: color 0.2s ease-in-out;
-        @include getRemSize(margin-top, 20px);
-        font-weight: 500;
-        @include getRemFontSize(22px);
-    }
-
-    &__about {
-        @include getRemSize(margin-top, 10px);
-        @include getRemFontSize(20px);
-    }
-
-    &__rating {
-        position: absolute;
-        top: 0;
-    }
-
-    &__viewBtn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &-icon {
-            margin: 0 auto;
-            @include getRemSize(width, 54px);
-        }
-
-        &-text {
-            @include getRemSize(margin-top, 10px);
-            @include getRemFontSize(14px);
-        }
-    }
-
-    &:hover &__title {
-        color: $PRIMARY_COLOR;
-    }
-
-    &_canView &__img {
-        &::before {
-            content: '';
-            position: absolute;
-            background-color: rgba(#000, 0.5);
-            width: 100%;
-            height: 100%;
-            top: 0;
-        }
-    }
+  &__movie {
+    width: calc((100% - 4 * 30px) / 5);
+  }
 }
 
 .rating-tiny {
-    display: flex;
-    @include getRemSize(margin-top, 10px);
-    @include getRemSize(height, 34px);
+  display: flex;
+  @include getRemSize(margin-top, 10px);
+  @include getRemSize(height, 34px);
 
-    &:hover &__value {
-        @include getRemSize(padding-left, 15px);
-    }
+  &:hover &__value {
+    @include getRemSize(padding-left, 15px);
+  }
 
-    &__value {
-        @include getRemSize(font-size, 18px);
-        @include getRemSize-2val(padding, 7px, 6px);
-        @include getRemSize(line-height, 20px);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        transition: padding 0.3s ease-in-out;
-    }
+  &__value {
+    @include getRemSize(font-size, 18px);
+    @include getRemSize-2val(padding, 7px, 6px);
+    @include getRemSize(line-height, 20px);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: padding 0.3s ease-in-out;
+  }
 
-    &_kp &__value {
-        background-color: #e16001;
-    }
+  &_kp &__value {
+    background-color: #e16001;
+  }
 
-    &_imdb &__value {
-        background-color: #d49f31;
-    }
+  &_imdb &__value {
+    background-color: #d49f31;
+  }
 }
 
 .aside {
-    @include make-col(3);
-    @include make-col-ready();
+  @include make-col(3);
+  @include make-col-ready();
 }
 
 .movie {
-    @include make-row();
+  &__preview {
+    @include make-col(4);
+    @include make-col-ready();
+  }
 
-    &__preview {
-        @include make-col(4);
-        @include make-col-ready();
+  &__overview {
+    @include make-col(8);
+    @include make-col-ready();
+  }
+
+  &__poster {
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.14);
+    border: 1px solid #2b2b2b;
+    overflow: hidden;
+    padding-bottom: 155.607476635514%;
+    @include getRemSize(margin-bottom, 20px);
+
+    > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    transition: color 0.2s ease-in-out;
+    @include getRemFontSize(40px);
+    font-weight: 500;
+
+    &:hover {
+      color: $PRIMARY_COLOR;
+    }
+  }
+
+  &__subtitle {
+    @include getRemSize(margin-top, 15px);
+    @include getRemFontSize(30px);
+  }
+
+  &__view-btn {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-icon {
+      margin: 0 auto;
+      @include getRemSize(width, 100px);
+      transition: 0.2s ease-in-out;
     }
 
-    &__overview {
-        @include make-col(8);
-        @include make-col-ready();
+    &-text {
+      @include getRemSize(margin-top, 15px);
+      @include getRemFontSize(20px);
+      text-align: center;
+    }
+  }
+
+  &__block {
+    background-color: rgba(28, 29, 31, 0.5);
+    padding: 15px 20px;
+    border-radius: 5px;
+    @include getRemSize(margin-top, 20px);
+    border: 1px solid #2b2b2b;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+
+    &_opaque {
+      background-color: #212121;
+      box-shadow: none;
     }
 
-    &__poster {
-        position: relative;
-        border-radius: 5px;
-        box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.14);
-        border: 1px solid #2b2b2b;
-        overflow: hidden;
-        height: 666px;
-
-        > img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &_noPadding {
+      padding: 0;
     }
+  }
+
+  &__content {
+    @include getRemSize(margin-top, 20px);
+  }
+
+  &-info {
+    display: flex;
+    @include getRemFontSize(18px);
+    @include getRemSize(gap, 50px);
 
     &__title {
-        transition: color 0.2s ease-in-out;
-        // @include getRemSize(margin-top, 20px);
-        @include getRemFontSize(40px);
-        font-weight: 500;
+      font-weight: bold;
+      @include getRemFontSize(20px);
     }
 
-    &__subtitle {
-        @include getRemSize(margin-top, 15px);
-        @include getRemFontSize(30px);
+    &__text {
+      @include getRemSize(margin-top, 10px);
     }
 
-    &__rating {
-        // position: absolute;
-        // top: 0;
+    &__row {
+      @include getRemSize-2val(padding, 15px, 20px);
+      border-top: 1px solid #2b2b2b;
+      display: flex;
+
+      &-title {
+        @include getRemSize(width, 247px);
+      }
+
+      .link {
+        @include getRemSize(margin-right, 10px);
+      }
     }
 
-    &__viewBtn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    &_direction_vertical {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
 
+  &-desc {
+    @include getRemFontSize(18px);
+
+    &__footer {
+      text-align: right;
+      @include getRemSize(margin-top, 20px);
+      @include getRemSize(margin-bottom, 10px);
+
+      &-more {
+        color: $PRIMARY_COLOR;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    h6 {
+      font-weight: medium;
+      @include getRemFontSize(22px);
+      @include getRemSize(margin-top, 5px);
+      @include getRemSize(margin-bottom, 15px);
+    }
+
+    p {
+      @include getRemSize(margin-bottom, 15px);
+    }
+  }
+
+  &-rating {
+    display: flex;
+    justify-content: center;
+    @include getRemSize(gap, 65px);
+    @include getRemFontSize(16px);
+
+    &__item {
+      @include getRemSize(width, 121px);
+      @include getRemSize(height, 121px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include getRemSize(gap, 8px);
+      border-radius: 50%;
+      border: 4px solid #ff8e00;
+      filter: drop-shadow(-6px -6px 12px #535353)
+        drop-shadow(6px 6px 12px #000000);
+
+      &_imbd {
+        border-color: #e3ac3c;
+      }
+    }
+
+    &__value {
+      font-size: bold;
+      @include getRemFontSize(28px);
+    }
+
+    &__name {
+      font-weight: 500;
+    }
+  }
+
+  &__rating-tiny {
+    position: absolute;
+    top: 0;
+  }
+
+  &_tiny {
+    .movie {
+      &__title {
+        @include getRemFontSize(22px);
+      }
+
+      &__subtitle {
+        @include getRemFontSize(20px);
+        @include getRemSize(margin-top, 10px);
+      }
+
+      &__view-btn {
         &-icon {
-            margin: 0 auto;
-            @include getRemSize(width, 100px);
+          @include getRemSize(width, 54px);
         }
 
         &-text {
-            @include getRemSize(margin-top, 15px);
-            @include getRemFontSize(14px);
+          @include getRemSize(margin-top, 10px);
+          @include getRemFontSize(14px);
         }
+      }
+    }
+  }
+
+  &_can-view &__poster {
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgba(#000, 0.5);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 1;
     }
 
-    // &:hover &__title {
-    //     color: $PRIMARY_COLOR;
-    // }
-
-    &__block {
-        background-color: rgba(28, 29, 31, 0.5);
-        padding: 15px 20px;
-        border-radius: 5px;
-        @include getRemSize(margin-top, 20px);
-        border: 1px solid #2b2b2b;
-        box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(10px);
-
-        &_opaque {
-            background-color: #212121;
-            box-shadow: none;
+    &:hover {
+      .movie {
+        &__view-btn {
+          &-icon {
+            transform: scale(1.2);
+          }
         }
-
-        &_noPadding {
-            padding: 0;
-        }
+      }
     }
-
-    &__content {
-        @include getRemSize(margin-top, 20px);
-    }
-
-    &-info {
-        display: flex;
-        @include getRemFontSize(18px);
-
-        &__item {
-            @include getRemSize(margin-right, 50px);
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
-        &__title {
-            font-weight: 700;
-            @include getRemFontSize(20px);
-        }
-
-        &__text {
-            @include getRemSize(margin-top, 10px);
-        }
-    }
-
-    &-desc {
-        font-size: 18px;
-
-        &__row {
-            @include getRemSize-2val(padding, 15px, 20px);
-            border-top: 1px solid #2b2b2b;
-            display: flex;
-
-            &:first-child {
-                border-top: none;
-            }
-        }
-
-        &__title {
-            font-weight: 700;
-            width: 29%;
-        }
-
-        .link {
-            @include getRemSize(margin-right, 10px);
-        }
-    }
-
-    &_canView &__poster {
-        &::before {
-            content: '';
-            position: absolute;
-            background-color: rgba(#000, 0.5);
-            width: 100%;
-            height: 100%;
-            top: 0;
-        }
-    }
+  }
 }
 
 .top-movie {
-    @include getRemSize(margin-top, 80px);
+  @include getRemSize(margin-top, 80px);
 
-    &__pos {
-        font-weight: 700;
-        @include getRemFontSize(87px);
-        color: #727272;
-    }
+  &__pos {
+    font-weight: 700;
+    @include getRemFontSize(87px);
+    color: #727272;
+  }
 
-    &__content {
-        @include getRemSize(margin-top, -18px);
-    }
+  &__content {
+    @include getRemSize(margin-top, -18px);
+  }
 }
