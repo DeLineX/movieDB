@@ -149,6 +149,7 @@ a {
   @include make-container-max-widths();
   @include make-container();
   @include getRemSize(margin-top, 30px);
+  position: relative;
 
   &__content {
     @include make-row();
@@ -280,8 +281,65 @@ a {
 }
 
 .aside {
+  height: 100%;
   @include make-col(3);
   @include make-col-ready();
+  @include getRemFontSize(20px);
+  position: sticky;
+  top: 15px;
+  overflow-y: auto;
+
+  &__block {
+    border: 1px solid #2b2b2b;
+    border-radius: 5px;
+    background-color: rgba(#1c1d1f, 0.5);
+
+    &-header {
+      @include getRemFontSize(22px);
+      @include getRemSize-2val(padding, 18px, 20px);
+      background-color: #212121;
+      border-bottom: 1px solid #2b2b2b;
+    }
+  }
+
+  &__item {
+    @include getRemSize(padding, 15px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2b2b2b;
+
+    &-img {
+      display: block;
+      @include getRemSize(margin-right, 15px);
+      @include getRemSize(width, 92px);
+      flex-shrink: 0;
+      border: 1px solid #2b2b2b;
+      border-radius: 5px;
+    }
+
+    &-date {
+      display: flex;
+
+      &-icon {
+        @include getRemSize(margin-right, 10px);
+        flex-shrink: 0;
+      }
+
+      @include getRemFontSize(16px);
+      color: #a4a4a4;
+    }
+
+    &-text {
+      @include getRemSize(margin-top, 10px);
+    }
+
+    &-title {
+      transition: 0.2s ease-in-out;
+      &:hover {
+        color: $PRIMARY_COLOR;
+      }
+    }
+  }
 }
 
 .movie {
@@ -469,6 +527,7 @@ a {
   &__rating-tiny {
     position: absolute;
     top: 0;
+    z-index: 1;
   }
 
   &_tiny {
@@ -529,5 +588,92 @@ a {
 
   &__content {
     @include getRemSize(margin-top, -18px);
+  }
+}
+
+.footer {
+  @include make-container-max-widths();
+  @include make-container();
+  @include getRemSize(padding-top, 32px);
+  color: #a8a8a8;
+  @include getRemFontSize(18px);
+
+  &__inner {
+    @include make-row();
+  }
+
+  &__content {
+    @include make-col(9);
+    @include make-col-ready();
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include getRemSize(gap, 250px);
+  }
+
+  &__block {
+    &-title {
+      color: #fff;
+      @include getRemSize(margin-bottom, 10px);
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    &-item {
+      transition: 0.2s ease-in-out;
+      @include getRemSize(line-height, 26px);
+
+      &:hover {
+        color: $PRIMARY_COLOR;
+      }
+    }
+  }
+
+  &__logo {
+    @include getRemFontSize(21px);
+    @include make-col(3);
+    @include make-col-ready();
+
+    &-content {
+      @include getRemSize(width, 287px);
+    }
+  }
+
+  &__bottom {
+    @include getRemSize(margin-top, 20px);
+    @include getRemSize-2val(padding, 12px, 0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid #323232 1px;
+  }
+
+  &__policy {
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: $PRIMARY_COLOR;
+    }
+  }
+
+  &__socials {
+    &-item {
+      path,
+      circle {
+        transition: 0.2s ease-in-out;
+      }
+
+      &:hover {
+        path {
+          fill: $PRIMARY_COLOR;
+        }
+
+        circle {
+          stroke: $PRIMARY_COLOR;
+        }
+      }
+    }
   }
 }
