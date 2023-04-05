@@ -1,0 +1,61 @@
+@import "./variables.scss";
+
+.swiper {
+  &-button {
+    &-prev,
+    &-next {
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: 55%;
+      background-image: url("../icons/arrow-right.svg");
+      background-color: rgba($PRIMARY_COLOR, 0.8);
+      box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.14);
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.2s ease-in-out;
+    }
+
+    &-next {
+      transform: translate(50%, -50%);
+      right: 0;
+    }
+
+    &-prev {
+      left: 0;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    &-disabled {
+      opacity: 0;
+      cursor: default;
+    }
+  }
+  &-pagination {
+    &-bullet {
+      border: 1px solid #fff;
+      opacity: 1;
+
+      &-active {
+        background-color: #fff;
+      }
+    }
+
+    &-bullets.swiper-pagination-horizontal {
+      bottom: -44px;
+    }
+  }
+
+  &-horizontal {
+    .swiper {
+      &-pagination {
+        &-bullets {
+          bottom: -50px;
+        }
+      }
+    }
+  }
+}

@@ -81,20 +81,6 @@ a {
     @include getRemSize-2val(margin, 0px, 25px);
   }
 
-  &__list {
-    display: flex;
-    @include getRemSize(gap, 30px);
-
-    &-item {
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        color: $PRIMARY_COLOR;
-      }
-    }
-  }
-
   &__search {
     flex-grow: 1;
     justify-content: space-between;
@@ -126,6 +112,53 @@ a {
 
       img {
         width: 100%;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  @include getRemSize(gap, 30px);
+
+  &__item {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $PRIMARY_COLOR;
+    }
+
+    &_has-sub {
+      position: relative;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  &__sub-menu {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    @include getRemSize(top, 46px);
+    padding: 20px;
+    border-radius: 5px;
+    background: rgba(28, 29, 31, 0.5);
+    border: 1px solid #2b2b2b;
+    box-shadow: 0px 7px 16px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+
+    &_hovered {
+      opacity: 1;
+    }
+
+    .menu {
+      &__item {
+        margin-top: 10px;
       }
     }
   }
@@ -246,6 +279,7 @@ a {
     display: flex;
     @include getRemSize(gap, 30px);
     flex-wrap: wrap;
+    position: relative;
   }
 
   &__movie {
@@ -281,18 +315,16 @@ a {
 }
 
 .aside {
-  height: 100%;
   @include make-col(3);
   @include make-col-ready();
   @include getRemFontSize(20px);
-  position: sticky;
-  top: 15px;
-  overflow-y: auto;
 
   &__block {
+    @include getRemSize(margin-top, 30px);
     border: 1px solid #2b2b2b;
     border-radius: 5px;
     background-color: rgba(#1c1d1f, 0.5);
+    filter: drop-shadow(0px 7px 16px rgba(0, 0, 0, 0.25));
 
     &-header {
       @include getRemFontSize(22px);
@@ -300,13 +332,37 @@ a {
       background-color: #212121;
       border-bottom: 1px solid #2b2b2b;
     }
+
+    &_no-margin {
+      margin-top: 0;
+    }
   }
 
+  &__content {
+    position: relative;
+  }
+}
+
+.similar-collections {
   &__item {
     @include getRemSize(padding, 15px);
     display: flex;
     align-items: center;
     border-bottom: 1px solid #2b2b2b;
+
+    &:hover {
+      .similar-collections {
+        &__item {
+          &-img {
+            transform: scale(1.1);
+          }
+
+          &-title {
+            color: $PRIMARY_COLOR;
+          }
+        }
+      }
+    }
 
     &-img {
       display: block;
@@ -315,6 +371,7 @@ a {
       flex-shrink: 0;
       border: 1px solid #2b2b2b;
       border-radius: 5px;
+      transition: 0.2s ease-in-out;
     }
 
     &-date {
@@ -335,9 +392,50 @@ a {
 
     &-title {
       transition: 0.2s ease-in-out;
-      &:hover {
-        color: $PRIMARY_COLOR;
-      }
+    }
+  }
+}
+
+.popular-collections {
+  font-weight: 500;
+  @include getRemFontSize(18px);
+
+  &__item {
+    min-height: 545px;
+    @include getRemSize(padding, 20px);
+    @include getRemSize(padding-top, 130px);
+    position: relative;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    width: 50%;
+    @include getRemFontSize(36px);
+  }
+
+  &__button {
+    display: inline-block;
+    @include getRemSize(border-radius, 50px);
+    @include getRemSize(margin-top, 20px);
+    background-color: $PRIMARY_COLOR;
+    @include getRemSize-2val(padding, 13px, 33px);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }

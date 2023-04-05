@@ -21,29 +21,43 @@
             <div class="logo__text">Знаем, что вам понравится</div>
           </div>
           <nav class="header__nav">
-            <ul class="header__list">
-              <li class="header__list-item">
+            <ul class="menu">
+              <li class="menu__item">
                 <a href="#">Главная</a>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Подборки</a>
               </li>
-              <li class="header__list-item">
-                <a href="#">По жанру</a>
+              <li class="menu__item menu__item_has-sub">
+                <span>По жанру</span>
+                <ul class="menu__sub-menu">
+                  <li class="menu__item"><a href="#">Боевик</a></li>
+                  <li class="menu__item"><a href="#">Военные</a></li>
+                  <li class="menu__item"><a href="#">Детектив</a></li>
+                  <li class="menu__item"><a href="#">Детский</a></li>
+                  <li class="menu__item"><a href="#">Драма</a></li>
+                  <li class="menu__item"><a href="#">Комедия</a></li>
+                  <li class="menu__item"><a href="#">Криминал</a></li>
+                  <li class="menu__item"><a href="#">Мелодрама</a></li>
+                  <li class="menu__item"><a href="#">Триллер</a></li>
+                  <li class="menu__item"><a href="#">Ужасы</a></li>
+                  <li class="menu__item"><a href="#">Фантастика</a></li>
+                  <li class="menu__item"><a href="#">Фэнтези</a></li>
+                </ul>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Фильмы</a>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Сериалы</a>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Мультфильмы</a>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Аниме</a>
               </li>
-              <li class="header__list-item">
+              <li class="menu__item">
                 <a href="#">Актеры</a>
               </li>
             </ul>
@@ -100,315 +114,415 @@
             <div class="compilation">
               <div class="compilation__title">Лучшие фильмы подборки</div>
               <div class="compilation__content">
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster1.png"
-                      alt="poster1"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
+                <div class="best-compilations-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster1.png"
+                          alt="poster1"
                         />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Механик</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny movie_can-view"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster2.png"
+                          alt="poster2"
                         />
-                        <div class="rating-tiny__value">4.7</div>
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                        <div href="#" class="movie__view-btn">
+                          <img
+                            src="./src/assets/images/viewIcon.svg"
+                            alt="viewIcon"
+                            class="movie__view-btn-icon"
+                          />
+                          <div class="movie__view-btn-text">Смотреть</div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title"
+                        >Шан-Чи и легенда десяти колец</a
+                      >
+                      <div class="movie__subtitle">
+                        2020, Фантастика, Великобритания
                       </div>
                     </div>
-                  </a>
-                  <a href="#" class="movie__title">Механик</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny movie_can-view">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster2.png"
-                      alt="poster2"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster3.png"
+                          alt="poster3"
                         />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Гениальное ограбление</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster4.png"
+                          alt="poster4"
                         />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Персонаж</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
                     </div>
-                    <div href="#" class="movie__view-btn">
-                      <img
-                        src="./src/assets/images/viewIcon.svg"
-                        alt="viewIcon"
-                        class="movie__view-btn-icon"
-                      />
-                      <div class="movie__view-btn-text">Смотреть</div>
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
+                        <img
+                          src="./src/assets/images/posters/poster5.png"
+                          alt="poster5"
+                        />
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Пассажиры</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
                     </div>
-                  </a>
-                  <a href="#" class="movie__title"
-                    >Шан-Чи и легенда десяти колец</a
-                  >
-                  <div class="movie__subtitle">
-                    2020, Фантастика, Великобритания
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
+                        <img
+                          src="./src/assets/images/posters/poster3.png"
+                          alt="poster3"
+                        />
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Гениальное ограбление</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
                   </div>
                 </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster3.png"
-                      alt="poster3"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
-                        <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="movie__title">Гениальное ограбление</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster4.png"
-                      alt="poster4"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
-                        <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="movie__title">Персонаж</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster5.png"
-                      alt="poster5"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
-                        <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="movie__title">Пассажиры</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
+                <div
+                  class="swiper-button-prev best-compilations-swiper-prev"
+                ></div>
+                <div
+                  class="swiper-button-next best-compilations-swiper-next"
+                ></div>
               </div>
             </div>
             <div class="compilation">
               <div class="compilation__title">Новые фильмы подборки</div>
               <div class="compilation__content">
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster3.png"
-                      alt="poster3"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
+                <div class="new-compilations-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster3.png"
+                          alt="poster3"
                         />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Гениальное ограбление</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster4.png"
+                          alt="poster4"
                         />
-                        <div class="rating-tiny__value">4.7</div>
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Персонаж</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
+                        <img
+                          src="./src/assets/images/posters/poster5.png"
+                          alt="poster5"
+                        />
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Пассажиры</a>
+                      <div class="movie__subtitle">
+                        2020, Фантастика, Великобритания
                       </div>
                     </div>
-                  </a>
-                  <a href="#" class="movie__title">Гениальное ограбление</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster4.png"
-                      alt="poster4"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny movie_can-view"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster2.png"
+                          alt="poster2"
                         />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                        <div href="#" class="movie__view-btn">
+                          <img
+                            src="./src/assets/images/viewIcon.svg"
+                            alt="viewIcon"
+                            class="movie__view-btn-icon"
+                          />
+                          <div class="movie__view-btn-text">Смотреть</div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title"
+                        >Шан-Чи и легенда десяти колец</a
+                      >
+                      <div class="movie__subtitle">2020, Драма, США</div>
                     </div>
-                  </a>
-                  <a href="#" class="movie__title">Персонаж</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster5.png"
-                      alt="poster5"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
                         <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
+                          src="./src/assets/images/posters/poster1.png"
+                          alt="poster1"
                         />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Механик</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
                     </div>
-                  </a>
-                  <a href="#" class="movie__title">Пассажиры</a>
-                  <div class="movie__subtitle">
-                    2020, Фантастика, Великобритания
+                    <div
+                      class="swiper-slide compilation__movie movie movie_tiny"
+                    >
+                      <a href="#" class="movie__poster">
+                        <img
+                          src="./src/assets/images/posters/poster3.png"
+                          alt="poster3"
+                        />
+                        <div class="movie__rating-tiny">
+                          <div class="rating-tiny rating-tiny_kp">
+                            <img
+                              src="./src/assets/images/kpIcon.png"
+                              alt="kpIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.8</div>
+                          </div>
+                          <div class="rating-tiny rating-tiny_imdb">
+                            <img
+                              src="./src/assets/images/imdbIcon.png"
+                              alt="imdbIcon"
+                              class="rating-tiny__icon"
+                            />
+                            <div class="rating-tiny__value">4.7</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="movie__title">Гениальное ограбление</a>
+                      <div class="movie__subtitle">2020, Драма, США</div>
+                    </div>
                   </div>
                 </div>
-                <div class="compilation__movie movie movie_tiny movie_can-view">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster2.png"
-                      alt="poster2"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
-                        <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
-                    </div>
-                    <div href="#" class="movie__view-btn">
-                      <img
-                        src="./src/assets/images/viewIcon.svg"
-                        alt="viewIcon"
-                        class="movie__view-btn-icon"
-                      />
-                      <div class="movie__view-btn-text">Смотреть</div>
-                    </div>
-                  </a>
-                  <a href="#" class="movie__title"
-                    >Шан-Чи и легенда десяти колец</a
-                  >
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
-                <div class="compilation__movie movie movie_tiny">
-                  <a href="#" class="movie__poster">
-                    <img
-                      src="./src/assets/images/posters/poster1.png"
-                      alt="poster1"
-                    />
-                    <div class="movie__rating-tiny">
-                      <div class="rating-tiny rating-tiny_kp">
-                        <img
-                          src="./src/assets/images/kpIcon.png"
-                          alt="kpIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.8</div>
-                      </div>
-                      <div class="rating-tiny rating-tiny_imdb">
-                        <img
-                          src="./src/assets/images/imdbIcon.png"
-                          alt="imdbIcon"
-                          class="rating-tiny__icon"
-                        />
-                        <div class="rating-tiny__value">4.7</div>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="movie__title">Механик</a>
-                  <div class="movie__subtitle">2020, Драма, США</div>
-                </div>
+                <div
+                  class="swiper-button-prev new-compilations-swiper-prev"
+                ></div>
+                <div
+                  class="swiper-button-next new-compilations-swiper-next"
+                ></div>
               </div>
             </div>
             <div class="top-movie">
@@ -643,97 +757,169 @@
             </div>
           </section>
           <aside class="aside">
-            <div class="aside__block">
+            <div class="aside__block aside__block_no-margin">
               <div class="aside__block-header">Похожие коллекции</div>
-              <div class="aside__item">
-                <img
-                  src="./src/assets/images/posters/miniPoster1.png"
-                  class="aside__item-img"
-                />
-                <div class="aside__item-content">
-                  <div class="aside__item-date">
-                    <img
-                      src="./src/assets/icons/clock.svg"
-                      class="aside__item-date-icon"
-                    />
-                    <span> 2 недели назад </span>
+              <div class="similar-colections">
+                <a href="#" class="similar-collections__item">
+                  <img
+                    src="./src/assets/images/posters/miniPoster1.png"
+                    class="similar-collections__item-img"
+                  />
+                  <div class="similar-collections__item-content">
+                    <div class="similar-collections__item-date">
+                      <img
+                        src="./src/assets/icons/clock.svg"
+                        class="similar-collections__item-date-icon"
+                      />
+                      <span> 2 недели назад </span>
+                    </div>
+                    <div class="similar-collections__item-title">
+                      Задача организации, в особенности же новая формировании.
+                    </div>
                   </div>
-                  <a href="#" class="aside__item-title">
-                    Задача организации, в особенности же новая формировании.
-                  </a>
-                </div>
+                </a>
+                <a href="#" class="similar-collections__item">
+                  <img
+                    src="./src/assets/images/posters/miniPoster2.png"
+                    class="similar-collections__item-img"
+                  />
+                  <div class="similar-collections__item-content">
+                    <div class="similar-collections__item-date">
+                      <img
+                        src="./src/assets/icons/clock.svg"
+                        class="similar-collections__item-date-icon"
+                      />
+                      <span> 2 недели назад </span>
+                    </div>
+                    <div class="similar-collections__item-title">
+                      Задача организации, в особенности же новая формировании.
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="similar-collections__item">
+                  <img
+                    src="./src/assets/images/posters/miniPoster3.png"
+                    class="similar-collections__item-img"
+                  />
+                  <div class="similar-collections__item-content">
+                    <div class="similar-collections__item-date">
+                      <img
+                        src="./src/assets/icons/clock.svg"
+                        class="similar-collections__item-date-icon"
+                      />
+                      <span> 2 недели назад </span>
+                    </div>
+                    <div class="similar-collections__item-title">
+                      Задача организации, в особенности же новая формировании.
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="similar-collections__item">
+                  <img
+                    src="./src/assets/images/posters/miniPoster4.png"
+                    class="similar-collections__item-img"
+                  />
+                  <div class="similar-collections__item-content">
+                    <div class="similar-collections__item-date">
+                      <img
+                        src="./src/assets/icons/clock.svg"
+                        class="similar-collections__item-date-icon"
+                      />
+                      <span> 2 недели назад </span>
+                    </div>
+                    <div class="similar-collections__item-title">
+                      Задача организации, в особенности же новая формировании.
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="similar-collections__item">
+                  <img
+                    src="./src/assets/images/posters/miniPoster5.png"
+                    class="similar-collections__item-img"
+                  />
+                  <div class="similar-collections__item-content">
+                    <div class="similar-collections__item-date">
+                      <img
+                        src="./src/assets/icons/clock.svg"
+                        class="similar-collections__item-date-icon"
+                      />
+                      <span> 2 недели назад </span>
+                    </div>
+                    <div class="similar-collections__item-title">
+                      Задача организации, в особенности же новая формировании.
+                    </div>
+                  </div>
+                </a>
               </div>
-              <div class="aside__item">
-                <img
-                  src="./src/assets/images/posters/miniPoster1.png"
-                  class="aside__item-img"
-                />
-                <div class="aside__item-content">
-                  <div class="aside__item-date">
-                    <img
-                      src="./src/assets/icons/clock.svg"
-                      class="aside__item-date-icon"
-                    />
-                    <span> 2 недели назад </span>
+            </div>
+            <div class="aside__block">
+              <div class="aside__block-header">Популярные коллекции</div>
+              <div class="aside__block-content">
+                <div class="swiper popular-collections-swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide popular-collections__item">
+                      <img
+                        src="./src/assets/images/posters/popularPoster.png"
+                        class="popular-collections__poster"
+                        alt="poster"
+                      />
+                      <div class="popular-collections__title">
+                        Лучшие сериалы 2015-2021 годов
+                      </div>
+                      <a href="#" class="popular-collections__button"
+                        >Смотреть</a
+                      >
+                    </div>
+                    <div class="swiper-slide popular-collections__item">
+                      <img
+                        src="./src/assets/images/posters/popularPoster.png"
+                        class="popular-collections__poster"
+                        alt="poster"
+                      />
+                      <div class="popular-collections__title">
+                        Лучшие сериалы 2015-2021 годов
+                      </div>
+                      <a href="#" class="popular-collections__button"
+                        >Смотреть</a
+                      >
+                    </div>
+                    <div class="swiper-slide popular-collections__item">
+                      <img
+                        src="./src/assets/images/posters/popularPoster.png"
+                        class="popular-collections__poster"
+                        alt="poster"
+                      />
+                      <div class="popular-collections__title">
+                        Лучшие сериалы 2015-2021 годов
+                      </div>
+                      <a href="#" class="popular-collections__button"
+                        >Смотреть</a
+                      >
+                    </div>
+                    <div class="swiper-slide popular-collections__item">
+                      <img
+                        src="./src/assets/images/posters/popularPoster.png"
+                        class="popular-collections__poster"
+                        alt="poster"
+                      />
+                      <div class="popular-collections__title">
+                        Лучшие сериалы 2015-2021 годов
+                      </div>
+                      <a href="#" class="popular-collections__button"
+                        >Смотреть</a
+                      >
+                    </div>
                   </div>
-                  <a href="#" class="aside__item-title">
-                    Задача организации, в особенности же новая формировании.
-                  </a>
                 </div>
-              </div>
-              <div class="aside__item">
-                <img
-                  src="./src/assets/images/posters/miniPoster1.png"
-                  class="aside__item-img"
-                />
-                <div class="aside__item-content">
-                  <div class="aside__item-date">
-                    <img
-                      src="./src/assets/icons/clock.svg"
-                      class="aside__item-date-icon"
-                    />
-                    <span> 2 недели назад </span>
-                  </div>
-                  <a href="#" class="aside__item-title">
-                    Задача организации, в особенности же новая формировании.
-                  </a>
-                </div>
-              </div>
-              <div class="aside__item">
-                <img
-                  src="./src/assets/images/posters/miniPoster1.png"
-                  class="aside__item-img"
-                />
-                <div class="aside__item-content">
-                  <div class="aside__item-date">
-                    <img
-                      src="./src/assets/icons/clock.svg"
-                      class="aside__item-date-icon"
-                    />
-                    <span> 2 недели назад </span>
-                  </div>
-                  <a href="#" class="aside__item-title">
-                    Задача организации, в особенности же новая формировании.
-                  </a>
-                </div>
-              </div>
-              <div class="aside__item">
-                <img
-                  src="./src/assets/images/posters/miniPoster1.png"
-                  class="aside__item-img"
-                />
-                <div class="aside__item-content">
-                  <div class="aside__item-date">
-                    <img
-                      src="./src/assets/icons/clock.svg"
-                      class="aside__item-date-icon"
-                    />
-                    <span> 2 недели назад </span>
-                  </div>
-                  <a href="#" class="aside__item-title">
-                    Задача организации, в особенности же новая формировании.
-                  </a>
-                </div>
+                <div
+                  class="swiper-pagination popular-collections-swiper-pagination"
+                ></div>
+                <div
+                  class="swiper-button-prev popular-collections-swiper-prev"
+                ></div>
+                <div
+                  class="swiper-button-next popular-collections-swiper-next"
+                ></div>
               </div>
             </div>
           </aside>
@@ -900,4 +1086,5 @@
       </footer>
     </div>
   </body>
+  <script type="module" src="./src/script.ts"></script>
 </html>

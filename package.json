@@ -17,6 +17,7 @@
     "dependencies": {
         "gh-pages": "^5.0.0",
         "reset-css": "^5.0.1",
-        "sass": "^1.58.3"
+        "sass": "^1.58.3",
+        "swiper": "^9.2.0"
     }
 }
