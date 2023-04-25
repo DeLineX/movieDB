@@ -18,6 +18,14 @@ body {
   @include media-breakpoint-down(lg) {
     font-size: 11px;
   }
+
+  @include media-breakpoint-down(md) {
+    font-size: 8px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 11px;
+  }
 }
 
 img {
@@ -62,6 +70,7 @@ a {
   border-bottom: solid 2px #212323;
   box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
   @include getRemFontSize(18px);
+  position: relative;
 
   &__content {
     @include make-container-max-widths();
@@ -74,11 +83,21 @@ a {
   &__logo {
     @include getRemFontSize(12px);
     @include getRemSize(width, 157px);
+
+    &-text {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
   }
 
   &__nav {
     flex-shrink: 0;
     @include getRemSize-2val(margin, 0px, 25px);
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 
   &__search {
@@ -90,6 +109,10 @@ a {
     border: solid 2px #252a2c;
     position: relative;
     max-width: 716px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
 
     &-input {
       width: 100%;
@@ -114,6 +137,126 @@ a {
         width: 100%;
       }
     }
+  }
+
+  &__controls {
+    display: none;
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__search-btn {
+    width: 22px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  &__burger {
+    width: 28px;
+    padding: 7px 4px;
+    border-radius: 5px;
+    background-color: $PRIMARY_COLOR;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &-line {
+      height: 2px;
+      background-color: #fff;
+      margin-bottom: 5px;
+      transition: 0.2s ease-in-out;
+
+      &:nth-child(2) {
+        width: 80%;
+        margin-left: auto;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &_opened &-line {
+      &:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__mobile-nav {
+    position: absolute;
+    top: 100%;
+  }
+
+  &__mobile-search {
+    position: absolute;
+    top: 100%;
+  }
+}
+
+.mobile-menu {
+  z-index: -1;
+  opacity: 0;
+  transition: z-index 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  background-color: #181a19;
+  box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
+
+  &_opened {
+    z-index: 3;
+    opacity: 1;
+  }
+
+  &__container {
+    @include make-container-max-widths();
+    @include make-container();
+  }
+
+  &__list {
+    padding: 30px 0;
+    border-top: 2px solid #212323;
+    border-bottom: 2px solid #212323;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: $PRIMARY_COLOR;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__socials {
+    padding: 15px 0;
+  }
+
+  .header__search {
+    display: block;
+    max-width: none;
+    margin: 20px 0;
   }
 }
 
@@ -210,10 +353,20 @@ a {
 .section {
   @include make-col(9);
   @include make-col-ready();
+  @include getRemSize(padding-bottom, 120px);
+
+  @include media-breakpoint-down(md) {
+    @include make-col(12);
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 20px;
+  }
 }
 
 .banner {
   @include getRemSize(padding-bottom, 20px);
+  position: relative;
 
   &__block {
     position: relative;
@@ -225,7 +378,6 @@ a {
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 1;
   }
 
   &__img {
@@ -235,8 +387,13 @@ a {
     border-radius: 5px;
     overflow: hidden;
 
+    @include media-breakpoint-down(sm) {
+      height: 300px;
+    }
+
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -318,6 +475,17 @@ a {
   @include make-col(3);
   @include make-col-ready();
   @include getRemFontSize(20px);
+  padding-bottom: 50px;
+
+  @include media-breakpoint-down(md) {
+    @include make-col(8);
+    @include make-col-offset(4);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include make-col(12);
+    @include make-col-offset(0);
+  }
 
   &__block {
     @include getRemSize(margin-top, 30px);
@@ -376,6 +544,8 @@ a {
 
     &-date {
       display: flex;
+      align-items: center;
+      @include getRemSize(margin-bottom, 10px);
 
       &-icon {
         @include getRemSize(margin-right, 10px);
@@ -401,7 +571,7 @@ a {
   @include getRemFontSize(18px);
 
   &__item {
-    min-height: 545px;
+    @include getRemSize(min-height, 545px);
     @include getRemSize(padding, 20px);
     @include getRemSize(padding-top, 130px);
     position: relative;
@@ -444,11 +614,20 @@ a {
   &__preview {
     @include make-col(4);
     @include make-col-ready();
+
+    @include media-breakpoint-down(sm) {
+      @include make-col(12);
+      margin-bottom: 20px;
+    }
   }
 
   &__overview {
     @include make-col(8);
     @include make-col-ready();
+
+    @include media-breakpoint-down(sm) {
+      @include make-col(12);
+    }
   }
 
   &__poster {
@@ -506,7 +685,7 @@ a {
 
   &__block {
     background-color: rgba(28, 29, 31, 0.5);
-    padding: 15px 20px;
+    @include getRemSize-2val(padding, 15px, 20px);
     border-radius: 5px;
     @include getRemSize(margin-top, 20px);
     border: 1px solid #2b2b2b;
@@ -527,10 +706,15 @@ a {
     @include getRemSize(margin-top, 20px);
   }
 
-  &-info {
+  &__info {
     display: flex;
     @include getRemFontSize(18px);
+    @include getRemSize(line-height, 28px);
     @include getRemSize(gap, 50px);
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
 
     &__title {
       font-weight: bold;
@@ -594,9 +778,14 @@ a {
     @include getRemSize(gap, 65px);
     @include getRemFontSize(16px);
 
+    @include media-breakpoint-down(md) {
+      @include getRemSize(gap, 40px);
+    }
+
     &__item {
       @include getRemSize(width, 121px);
       @include getRemSize(height, 121px);
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -707,6 +896,14 @@ a {
     justify-content: space-between;
     align-items: flex-start;
     @include getRemSize(gap, 250px);
+
+    @include media-breakpoint-down(md) {
+      @include make-col(12);
+    }
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
   }
 
   &__block {
@@ -733,6 +930,16 @@ a {
     @include make-col(3);
     @include make-col-ready();
 
+    @include media-breakpoint-down(md) {
+      @include make-col(12);
+      @include getRemSize(margin-bottom, 30px);
+      text-align: right;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
     &-content {
       @include getRemSize(width, 287px);
     }
@@ -745,6 +952,11 @@ a {
     justify-content: space-between;
     align-items: center;
     border-top: solid #323232 1px;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
   }
 
   &__policy {
@@ -756,21 +968,29 @@ a {
     }
   }
 
-  &__socials {
-    &-item {
-      path,
-      circle {
-        transition: 0.2s ease-in-out;
+  &__about {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}
+
+.socials {
+  &__item {
+    @include getRemSize(height, 60px);
+    @include getRemSize(width, 60px);
+    path,
+    circle {
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover {
+      path {
+        fill: $PRIMARY_COLOR;
       }
 
-      &:hover {
-        path {
-          fill: $PRIMARY_COLOR;
-        }
-
-        circle {
-          stroke: $PRIMARY_COLOR;
-        }
+      circle {
+        stroke: $PRIMARY_COLOR;
       }
     }
   }
