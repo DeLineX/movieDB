@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Movie DB</title>
-    <script type="module" crossorigin src="/movieDB/assets/index-d1c0b29f.js"></script>
-    <link rel="stylesheet" href="/movieDB/assets/index-4dbb74d7.css">
+    <script type="module" crossorigin src="/movieDB/assets/index-0972a23e.js"></script>
+    <link rel="stylesheet" href="/movieDB/assets/index-3a609d02.css">
   </head>
 
   <body>
@@ -20,7 +20,9 @@
               alt="logo"
               class="logo__img"
             />
-            <div class="logo__text">Знаем, что вам понравится</div>
+            <div class="logo__text header__logo-text">
+              Знаем, что вам понравится
+            </div>
           </div>
           <nav class="header__nav">
             <ul class="menu">
@@ -70,10 +72,182 @@
               placeholder="Поиск по сайту"
               class="header__search-input"
             />
-            <span class="header__search-icon"
-              ><img src="/movieDB/assets/magnify-5fda7f17.svg" alt="magnifyIcon"
-            /></span>
+            <img
+              class="header__search-icon"
+              src="/movieDB/assets/magnify-5fda7f17.svg"
+              alt="magnifyIcon"
+            />
           </form>
+          <div class="header__controls">
+            <img
+              class="header__search-btn"
+              src="/movieDB/assets/magnify-5fda7f17.svg"
+              alt="magnifyIcon"
+            />
+            <div class="header__burger">
+              <div class="header__burger-line"></div>
+              <div class="header__burger-line"></div>
+              <div class="header__burger-line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="header__mobile-nav mobile-menu">
+          <div class="mobile-menu__container">
+            <ul class="mobile-menu__list">
+              <li class="mobile-menu__item">
+                <a href="#">Главная</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Подборки</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">По жанру</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Фильмы</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Сериалы</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Мультфильмы</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Аниме</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="#">Актеры</a>
+              </li>
+            </ul>
+            <div class="mobile-menu__socials socials">
+              <a href="#">
+                <svg
+                  width="59"
+                  height="59"
+                  viewBox="0 0 59 59"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="socials__item"
+                >
+                  <circle
+                    cx="29.5"
+                    cy="29.5"
+                    r="28.5"
+                    stroke="#323232"
+                    stroke-width="2"
+                  />
+                  <g clip-path="url(#clip0_16_869)">
+                    <path
+                      d="M34.6628 19.1473H37.4929V14.2183C37.0046 14.1511 35.3255 14 33.3699 14C29.2895 14 26.4943 16.5665 26.4943 21.2837V25.625H21.9916V31.1353H26.4943V45H32.0149V31.1365H36.3355L37.0214 25.6263H32.0136V21.8301C32.0149 20.2375 32.4437 19.1473 34.6628 19.1473Z"
+                      fill="#858585"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_16_869">
+                      <rect
+                        width="31"
+                        height="31"
+                        fill="white"
+                        transform="translate(14 14)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  width="59"
+                  height="59"
+                  viewBox="0 0 59 59"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="socials__item"
+                >
+                  <circle
+                    cx="29.5"
+                    cy="29.5"
+                    r="28.5"
+                    stroke="#323232"
+                    stroke-width="2"
+                  />
+                  <g clip-path="url(#clip0_16_870)">
+                    <path
+                      d="M36.6085 14H22.3914C17.7643 14 14 17.7643 14 22.3914V36.6088C14 41.2356 17.7643 44.9999 22.3914 44.9999H36.6088C41.2356 44.9999 44.9999 41.2356 44.9999 36.6088V22.3914C44.9999 17.7643 41.2356 14 36.6085 14V14ZM29.5 37.9763C24.826 37.9763 21.0237 34.1739 21.0237 29.5C21.0237 24.826 24.826 21.0237 29.5 21.0237C34.1739 21.0237 37.9763 24.826 37.9763 29.5C37.9763 34.1739 34.1739 37.9763 29.5 37.9763ZM38.179 23.0226C36.7977 23.0226 35.6743 21.8992 35.6743 20.518C35.6743 19.1368 36.7977 18.0131 38.179 18.0131C39.5602 18.0131 40.6839 19.1368 40.6839 20.518C40.6839 21.8992 39.5602 23.0226 38.179 23.0226Z"
+                      fill="#858585"
+                    />
+                    <path
+                      d="M29.5 22.8411C25.8284 22.8411 22.8411 25.8282 22.8411 29.5C22.8411 33.1716 25.8284 36.159 29.5 36.159C33.1719 36.159 36.159 33.1716 36.159 29.5C36.159 25.8282 33.1719 22.8411 29.5 22.8411Z"
+                      fill="#858585"
+                    />
+                    <path
+                      d="M38.179 19.8308C37.8001 19.8308 37.4917 20.1392 37.4917 20.5181C37.4917 20.897 37.8001 21.2054 38.179 21.2054C38.5581 21.2054 38.8665 20.8972 38.8665 20.5181C38.8665 20.139 38.5581 19.8308 38.179 19.8308Z"
+                      fill="#858585"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_16_870">
+                      <rect
+                        width="31"
+                        height="31"
+                        fill="white"
+                        transform="translate(14 14)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  width="59"
+                  height="59"
+                  viewBox="0 0 59 59"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="socials__item"
+                >
+                  <circle
+                    cx="29.5"
+                    cy="29.5"
+                    r="28.5"
+                    stroke="#323232"
+                    stroke-width="2"
+                  />
+                  <g clip-path="url(#clip0_16_874)">
+                    <path
+                      d="M44.8357 36.63C44.7981 36.5491 44.7631 36.4819 44.7306 36.4282C44.1928 35.4595 43.165 34.2705 41.6478 32.8609L41.6157 32.8286L41.5997 32.8128L41.5835 32.7965H41.5672C40.8786 32.1401 40.4426 31.6988 40.26 31.4728C39.9259 31.0424 39.851 30.6067 40.0336 30.1652C40.1626 29.8317 40.6472 29.1273 41.4863 28.0511C41.9276 27.4807 42.2772 27.0236 42.5353 26.6792C44.397 24.2042 45.2041 22.6227 44.9565 21.934L44.8603 21.773C44.7957 21.6761 44.6289 21.5875 44.3602 21.5066C44.0909 21.426 43.7467 21.4126 43.3269 21.4664L38.6786 21.4985C38.6033 21.4718 38.4958 21.4743 38.3557 21.5066C38.2158 21.539 38.1458 21.5552 38.1458 21.5552L38.0649 21.5956L38.0007 21.6442C37.9468 21.6763 37.8877 21.7328 37.823 21.8135C37.7588 21.8939 37.705 21.9883 37.662 22.0959C37.156 23.3979 36.5806 24.6084 35.9348 25.7274C35.5366 26.3947 35.171 26.973 34.8371 27.4626C34.5036 27.9521 34.2238 28.3127 33.998 28.5438C33.7719 28.7752 33.5678 28.9606 33.3845 29.1006C33.2015 29.2407 33.0618 29.2999 32.9651 29.2782C32.8681 29.2566 32.7768 29.2351 32.6904 29.2136C32.5399 29.1167 32.4188 28.985 32.3275 28.8182C32.2358 28.6514 32.174 28.4415 32.1418 28.1886C32.1097 27.9356 32.0907 27.718 32.0852 27.535C32.0802 27.3522 32.0825 27.0937 32.0934 26.7601C32.1046 26.4264 32.1097 26.2006 32.1097 26.0822C32.1097 25.6733 32.1176 25.2295 32.1336 24.7506C32.1499 24.2718 32.1631 23.8924 32.1741 23.6129C32.1851 23.3331 32.1902 23.0371 32.1902 22.7251C32.1902 22.413 32.1712 22.1683 32.1336 21.9907C32.0965 21.8133 32.0396 21.6411 31.9646 21.4741C31.8891 21.3073 31.7787 21.1783 31.6337 21.0868C31.4885 20.9953 31.3079 20.9227 31.093 20.8688C30.5227 20.7397 29.7964 20.6699 28.9139 20.659C26.9126 20.6376 25.6266 20.7668 25.0563 21.0466C24.8304 21.1648 24.6259 21.3263 24.4431 21.5306C24.2493 21.7674 24.2223 21.8966 24.3622 21.9179C25.0079 22.0146 25.465 22.246 25.734 22.6118L25.831 22.8057C25.9064 22.9455 25.9817 23.1932 26.0571 23.5482C26.1323 23.9032 26.1809 24.2959 26.2022 24.7261C26.2559 25.5118 26.2559 26.1843 26.2022 26.7437C26.1484 27.3034 26.0975 27.7391 26.0489 28.0512C26.0004 28.3632 25.9278 28.6161 25.831 28.8097C25.734 29.0034 25.6695 29.1218 25.6372 29.1647C25.6049 29.2077 25.578 29.2348 25.5566 29.2454C25.4168 29.299 25.2713 29.3263 25.1208 29.3263C24.97 29.3263 24.7872 29.2509 24.572 29.1002C24.3569 28.9495 24.1337 28.7424 23.9023 28.4788C23.6709 28.215 23.4099 27.8465 23.1193 27.3731C22.8289 26.8997 22.5276 26.3402 22.2155 25.6946L21.9573 25.2264C21.7959 24.9252 21.5755 24.4866 21.2957 23.9111C21.0157 23.3353 20.7683 22.7783 20.5532 22.2403C20.4672 22.0143 20.338 21.8423 20.1659 21.7239L20.0851 21.6754C20.0314 21.6324 19.9452 21.5868 19.8269 21.5382C19.7085 21.4896 19.5849 21.4548 19.4557 21.4334L15.0332 21.4655C14.5813 21.4655 14.2746 21.5678 14.1132 21.7723L14.0486 21.8691C14.0163 21.9229 14 22.009 14 22.1274C14 22.2458 14.0323 22.3911 14.0969 22.5631C14.7425 24.0804 15.4446 25.5438 16.2031 26.9534C16.9617 28.3629 17.6208 29.4984 18.1802 30.3587C18.7397 31.2196 19.31 32.0322 19.8911 32.7959C20.4722 33.56 20.8569 34.0496 21.0451 34.2647C21.2335 34.4802 21.3815 34.6413 21.4891 34.7489L21.8927 35.1362C22.1509 35.3945 22.5301 35.7038 23.0305 36.0642C23.531 36.4248 24.085 36.7799 24.693 37.1299C25.3011 37.4793 26.0084 37.7644 26.8156 37.985C27.6226 38.2057 28.408 38.2943 29.1721 38.2516H31.0282C31.4047 38.2191 31.6899 38.1007 31.8837 37.8964L31.948 37.8155C31.9912 37.7513 32.0316 37.6515 32.0689 37.5172C32.1067 37.3827 32.1254 37.2346 32.1254 37.0734C32.1144 36.6108 32.1496 36.1939 32.2301 35.8227C32.3106 35.4516 32.4023 35.1718 32.5048 34.9834C32.6073 34.7951 32.723 34.6363 32.8517 34.5075C32.9807 34.3784 33.0726 34.3002 33.1266 34.2733C33.1801 34.2463 33.2229 34.2279 33.2552 34.2169C33.5135 34.1308 33.8174 34.2141 34.1674 34.4672C34.5172 34.7201 34.8453 35.0323 35.1521 35.4034C35.4588 35.7748 35.8273 36.1915 36.2576 36.6541C36.6882 37.1169 37.0647 37.4609 37.3874 37.6872L37.7101 37.8809C37.9256 38.0101 38.2054 38.1285 38.5498 38.2361C38.8935 38.3436 39.1947 38.3705 39.4534 38.3168L43.5852 38.2523C43.9938 38.2523 44.3118 38.1846 44.5374 38.0504C44.7634 37.9159 44.8977 37.7677 44.941 37.6065C44.9842 37.4452 44.9865 37.2622 44.9492 37.0575C44.9109 36.8534 44.8732 36.7106 44.8357 36.63Z"
+                      fill="#858585"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_16_874">
+                      <rect
+                        width="31"
+                        height="31"
+                        fill="white"
+                        transform="translate(14 14)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header__mobile-search mobile-menu">
+          <div class="mobile-menu__container">
+            <form class="header__search">
+              <input
+                type="text"
+                placeholder="Поиск по сайту"
+                class="header__search-input"
+              />
+              <img
+                class="header__search-icon"
+                src="/movieDB/assets/magnify-5fda7f17.svg"
+                alt="magnifyIcon"
+              />
+            </form>
+          </div>
         </div>
       </header>
       <main class="main">
@@ -81,17 +255,6 @@
           <section class="section">
             <div class="banner">
               <div class="banner__block">
-                <div class="banner__breadcrumbs breadcrumbs">
-                  <span class="breadcrumbs__item"><a href="#">Главная</a></span>
-                  <span>/</span>
-                  <span class="breadcrumbs__item"
-                    ><a href="#">Подборки</a></span
-                  >
-                  <span>/</span>
-                  <span class="breadcrumbs__item"
-                    >Лучшие фильмы всех времен</span
-                  >
-                </div>
                 <div class="banner__img">
                   <img src="/movieDB/assets/banner-2b649ebb.png" alt="" />
                 </div>
@@ -112,6 +275,13 @@
                 фильмов от {минимальная продолжительность} до {максимальная
                 продолжительность}. Выбирайте фильм и приятного просмотра!
               </p>
+              <div class="banner__breadcrumbs breadcrumbs">
+                <span class="breadcrumbs__item"><a href="#">Главная</a></span>
+                <span>/</span>
+                <span class="breadcrumbs__item"><a href="#">Подборки</a></span>
+                <span>/</span>
+                <span class="breadcrumbs__item">Лучшие фильмы всех времен</span>
+              </div>
             </div>
             <div class="compilation">
               <div class="compilation__title">Лучшие фильмы подборки</div>
@@ -553,49 +723,49 @@
                     >Гениальное ограбление (2021)</a
                   >
                   <div class="movie__subtitle">Way Down</div>
-                  <div class="movie__block movie__block_opaque movie-info">
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Продолжительность</div>
-                      <div class="movie-info__text">1 Час 58 минут</div>
+                  <div class="movie__block movie__block_opaque movie__info">
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Продолжительность</div>
+                      <div class="movie__info__text">1 Час 58 минут</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Год выпуска</div>
-                      <div class="movie-info__text">2021</div>
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Год выпуска</div>
+                      <div class="movie__info__text">2021</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">
                         Премьера фильма в России
                       </div>
-                      <div class="movie-info__text">22 Апреля 2021</div>
+                      <div class="movie__info__text">22 Апреля 2021</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Возраст</div>
-                      <div class="movie-info__text">16+</div>
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Возраст</div>
+                      <div class="movie__info__text">16+</div>
                     </div>
                   </div>
                   <div
-                    class="movie__block movie__block_noPadding movie-info movie-info_direction_vertical"
+                    class="movie__block movie__block_noPadding movie__info movie__info_direction_vertical"
                   >
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Жанр
                       </span>
                       <span>Боевик, Комедия, Драма</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Страна
                       </span>
                       <span>США</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         В главных ролях
                       </span>
                       <span>Адам Уэст, Берт Уорд, Уильям Шетнер</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Участвует в подборках
                       </span>
                       <span>
@@ -672,49 +842,49 @@
                     Шан-Чи и легенда десяти колец (2021)
                   </div>
                   <div class="movie__subtitle">Way Down</div>
-                  <div class="movie__block movie__block_opaque movie-info">
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Продолжительность</div>
-                      <div class="movie-info__text">1 Час 58 минут</div>
+                  <div class="movie__block movie__block_opaque movie__info">
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Продолжительность</div>
+                      <div class="movie__info__text">1 Час 58 минут</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Год выпуска</div>
-                      <div class="movie-info__text">2021</div>
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Год выпуска</div>
+                      <div class="movie__info__text">2021</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">
                         Премьера фильма в России
                       </div>
-                      <div class="movie-info__text">22 Апреля 2021</div>
+                      <div class="movie__info__text">22 Апреля 2021</div>
                     </div>
-                    <div class="movie-info__item">
-                      <div class="movie-info__title">Возраст</div>
-                      <div class="movie-info__text">16+</div>
+                    <div class="movie__info__item">
+                      <div class="movie__info__title">Возраст</div>
+                      <div class="movie__info__text">16+</div>
                     </div>
                   </div>
                   <div
-                    class="movie__block movie__block_noPadding movie-info movie-info_direction_vertical"
+                    class="movie__block movie__block_noPadding movie__info movie__info_direction_vertical"
                   >
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Жанр
                       </span>
                       <span>Боевик, Комедия, Драма</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Страна
                       </span>
                       <span>США</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         В главных ролях
                       </span>
                       <span>Адам Уэст, Берт Уорд, Уильям Шетнер</span>
                     </div>
-                    <div class="movie-info__row">
-                      <span class="movie-info__row-title movie-info__title">
+                    <div class="movie__info__row">
+                      <span class="movie__info__row-title movie__info__title">
                         Участвует в подборках
                       </span>
                       <span>
@@ -952,7 +1122,7 @@
               <li><a href="#" class="footer__menu-item">Аниме</a></li>
               <li><a href="#" class="footer__menu-item">Актеры</a></li>
             </div>
-            <div class="footer__block">
+            <div class="footer__block footer__about">
               <div class="footer__block-title">О нас</div>
               <div class="footer__block-text">
                 Зная всё о кино, хочется поделиться этим с другими. Делитесь
@@ -969,7 +1139,7 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__block">©Все права защищены MovieDB.ru 2021</div>
-          <div class="footer__socials">
+          <div class="socials">
             <a href="#">
               <svg
                 width="59"
@@ -977,7 +1147,7 @@
                 viewBox="0 0 59 59"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="footer__socials-item"
+                class="socials__item"
               >
                 <circle
                   cx="29.5"
@@ -1011,7 +1181,7 @@
                 viewBox="0 0 59 59"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="footer__socials-item"
+                class="socials__item"
               >
                 <circle
                   cx="29.5"
@@ -1053,7 +1223,7 @@
                 viewBox="0 0 59 59"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="footer__socials-item"
+                class="socials__item"
               >
                 <circle
                   cx="29.5"
